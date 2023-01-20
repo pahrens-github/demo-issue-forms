@@ -62,22 +62,28 @@ body:
         - DI IT
         - SI EP
         - Evosoft
-  - type: textarea
-    id: reason
+  - type: input
+    id: acp-level
     attributes:
-      label: Reasons
-      description: Why do you want to request this action?
-      render: shell
-  - type: textarea
-    id: usage
+      label: ACP Level/BIA Rating
+      description: Asset Classification & Protection (ACP) level or BIA (Business Impact Assessment). If not specified will use ACP rating 0.
+      placeholder: "1-2-1"
+  - type: dropdown
+    id: business_unit
     attributes:
-      label: Intended usage
-      description: Describe the intended use of the action you want to request, include example repositories if you can.
-      render: markdown
-  - type: checkboxes
-    id: duplication
-    attributes:
-      label: I have checked the internal marketplace for similar actions and couldn't find one that works for us.
+      label: Estimated number of users
+      description: Your estimated number of users within your organization who will be working in the GitHub Organization.
       options:
-        - label: I have checked the internal marketplace first
+        - 1-10
+        - 10-50
+        - 50-200
+        - 200-500
+        - more than 500
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms of Use
+      description: By submitting this issue, you agree to follow our Terms of Use.
+      options:
+        - label: I agree to follow the Terms of Use
           required: true
