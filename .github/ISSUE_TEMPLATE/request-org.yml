@@ -69,7 +69,7 @@ body:
       description: Asset Classification & Protection (ACP) level or BIA (Business Impact Assessment). If not specified will use ACP rating 0.
       placeholder: "1-2-1"
   - type: dropdown
-    id: business_unit
+    id: estimated_users
     attributes:
       label: Estimated number of users
       description: Your estimated number of users within your organization who will be working in the GitHub Organization.
