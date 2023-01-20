@@ -1,6 +1,6 @@
-name: Request new action
-description: Request new action to be added to the internal marketplace
-title: "New action request: <name of action here>"
+name: Request a new GitHub Organization
+description: Request a new GitHub Organization
+title: "New Organization request"
 assignees:
   - rajbos
 body:
@@ -8,17 +8,58 @@ body:
     attributes:
       value: |
         Thanks you for your request. We need some information before we can proceed.
-        After that, the request will be reviewed including an security assesment. Process tracking will happen inside this issue.
+        After that, the request will be reviewed. Process tracking will happen inside this issue.
 
         Please tag '@-username' or '@-teamname' to notifiy them in comments.
   - type: input
-    id: action_name
+    id: organization_name
     attributes:
-      label: Action name
-      description: The name of the action you want to request in the format owner/repository
-      placeholder: "uses: devops-actions/issue-comment-tag"
+      label: Organization Name
+      description: The name that you would like your organization to have. It can consist of alphanumeric characters and single hyphens (-), must not start or end with a hyphen and must not be longer than 39 characters.
+      placeholder: "my-new-organization"
     validations:
       required: true
+  - type: input
+    id: organization_display_name
+    attributes:
+      label: Organization Display Name
+      description: If you would like your organization to have a display name that is different from the organization name, you can specify it here.
+      placeholder: "My New Organization"
+    validations:
+      required: true
+  - type: input
+    id: organization_owner
+    attributes:
+      label: Organization Owner
+      description: A user ID within GitHub. You can find the ID on the right top corner on your profile, where it says: Signed in as <firstname>.<lastname>. This owner can add more users later on.
+      placeholder: "firstname-lastname"
+    validations:
+      required: true
+  - type: input
+    id: organization_deputy
+    attributes:
+      label: Organization Deputy
+      description: Another user ID who will be owner in your Organization. You can add owners later on as well. Set to false if you don't want a deputy right now.
+      placeholder: "firstname-lastname"
+  - type: checkboxes
+    id: enterprise_runners
+    attributes:
+      label: Enterprise Runners
+      description: When set to true, will attach shared enterprise runners to your organization for usage.
+  - type: dropdown
+    id: business_unit
+    attributes:
+      label: Business Unit
+      description: Specify your Business unit (BU).
+      options:
+        - DI FA
+        - DI PA
+        - DI MC
+        - DI SW
+        - DI CS
+        - DI IT
+        - SI EP
+        - Evosoft
   - type: textarea
     id: reason
     attributes:
