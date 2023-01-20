@@ -46,6 +46,8 @@ body:
     attributes:
       label: Enterprise Runners
       description: When set to true, will attach shared enterprise runners to your organization for usage.
+      options:
+        - label: enable
   - type: dropdown
     id: business_unit
     attributes:
